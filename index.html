@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PIXCAP - Cinematic Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav id="navbar">
+        <div class="container">
+            <a href="#" class="logo">
+                <svg class="camera-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                    <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path>
+                    <circle cx="12" cy="13" r="4"></circle>
+                </svg>
+                <span>PIXCAP</span>
+            </a>
+            <div class="nav-links">
+                <a href="#portfolio">Portfolio</a>
+                <a href="#about">About</a>
+                <a href="#services">Services</a>
+                <a href="#contact">Contact</a>
+            </div>
+            <button class="mobile-toggle" onclick="toggleMobileMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="mobile-menu">
+        <a href="#portfolio" onclick="toggleMobileMenu()">Portfolio</a>
+        <a href="#about" onclick="toggleMobileMenu()">About</a>
+        <a href="#services" onclick="toggleMobileMenu()">Services</a>
+        <a href="#contact" onclick="toggleMobileMenu()">Contact</a>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-bg">
+            <div class="hero-overlay"></div>
+            <div class="hero-gradient"></div>
+            <img src="photos/1 (1).jpg" alt="Hero Background">
+        </div>
+        <div class="hero-content">
+            <p class="hero-subtitle">Fine Art & Editorial Photography</p>
+            <h1 class="hero-title">
+                Stories in <br> <span class="italic">Shadow & Light</span>
+            </h1>
+            <div class="hero-cta">
+                <a href="#portfolio" class="btn-outline">Explore Work</a>
+                <a href="#portfolio" class="scroll-arrow">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="12" y1="5" x2="12" y2="19"></line>
+                        <polyline points="19 12 12 19 5 12"></polyline>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="portfolio">
+        <div class="container">
+            <div class="section-header">
+                <h2>Selected Works</h2>
+                <div class="categories">
+                    <button class="category-btn active" onclick="filterPortfolio('all')">All</button>
+                    <button class="category-btn" onclick="filterPortfolio('Portraits')">Portraits</button>
+                    <button class="category-btn" onclick="filterPortfolio('Cinematic')">Cinematic</button>
+                    <button class="category-btn" onclick="filterPortfolio('Street')">Street</button>
+                    <button class="category-btn" onclick="filterPortfolio('Events')">Events</button>
+                    <button class="category-btn" onclick="filterPortfolio('Commercial')">Commercial</button>
+                </div>
+            </div>
+
+            <div class="portfolio-grid">
+                <div class="portfolio-item" data-category="Portraits" onclick="openLightbox(0)">
+                    <img src="photos/1 (1).jpg" alt="Midnight Soul">
+                    <div class="portfolio-overlay">
+                        <h3>Midnight Soul</h3>
+                        <p>Portraits</p>
+                    </div>
+                </div>
+                <div class="portfolio-item" data-category="Street" onclick="openLightbox(1)">
+                    <img src="photos/1 (2).jpg" alt="Urban Echoes">
+                    <div class="portfolio-overlay">
+                        <h3>Urban Echoes</h3>
+                        <p>Street</p>
+                    </div>
+                </div>
+                <div class="portfolio-item" data-category="Cinematic" onclick="openLightbox(2)">
+                    <img src="photos/1 (3).jpg" alt="Neon Rain">
+                    <div class="portfolio-overlay">
+                        <h3>Neon Rain</h3>
+                        <p>Cinematic</p>
+                    </div>
+                </div>
+                <div class="portfolio-item" data-category="Cinematic" onclick="openLightbox(3)">
+                    <img src="photos/1 (4).jpg" alt="Silent Hills">
+                    <div class="portfolio-overlay">
+                        <h3>Silent Hills</h3>
+                        <p>Cinematic</p>
+                    </div>
+                </div>
+                <div class="portfolio-item" data-category="Events" onclick="openLightbox(4)">
+                    <img src="photos/1 (5).jpg" alt="The Groom">
+                    <div class="portfolio-overlay">
+                        <h3>The Groom</h3>
+                        <p>Events</p>
+                    </div>
+                </div>
+                <div class="portfolio-item" data-category="Commercial" onclick="openLightbox(5)">
+                    <img src="photos/1 (6).jpg" alt="Product X">
+                    <div class="portfolio-overlay">
+                        <h3>Product X</h3>
+                        <p>Commercial</p>
+                    </div>
+                </div>
+                <div class="portfolio-item" data-category="Portraits" onclick="openLightbox(6)">
+                    <img src="photos/1 (7).jpg" alt="Raw Emotion">
+                    <div class="portfolio-overlay">
+                        <h3>Raw Emotion</h3>
+                        <p>Portraits</p>
+                    </div>
+                </div>
+                <div class="portfolio-item" data-category="Street" onclick="openLightbox(7)">
+                    <img src="photos/1 (8).jpg" alt="Tokyo Drift">
+                    <div class="portfolio-overlay">
+                        <h3>Tokyo Drift</h3>
+                        <p>Street</p>
+                    </div>
+                </div>
+                <div class="portfolio-item" data-category="Events" onclick="openLightbox(8)">
+                    <img src="photos/1 (9).jpg" alt="Wedding Bliss">
+                    <div class="portfolio-overlay">
+                        <h3>Wedding Bliss</h3>
+                        <p>Events</p>
+                    </div>
+                </div>
+                <div class="portfolio-item" data-category="Commercial" onclick="openLightbox(9)">
+                    <img src="photos/1 (10).jpg" alt="Dark Mode">
+                    <div class="portfolio-overlay">
+                        <h3>Dark Mode</h3>
+                        <p>Commercial</p>
+                    </div>
+                </div>
+                <div class="portfolio-item" data-category="Cinematic" onclick="openLightbox(10)">
+                    <img src="photos/1 (11).jpg" alt="Noir Style">
+                    <div class="portfolio-overlay">
+                        <h3>Noir Style</h3>
+                        <p>Cinematic</p>
+                    </div>
+                </div>
+                <div class="portfolio-item" data-category="Street" onclick="openLightbox(11)">
+                    <img src="photos/1 (12).jpg" alt="Subway Life">
+                    <div class="portfolio-overlay">
+                        <h3>Subway Life</h3>
+                        <p>Street</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lightbox -->
+    <div id="lightbox" class="lightbox">
+        <button class="lightbox-close" onclick="closeLightbox()">×</button>
+        <button class="lightbox-prev" onclick="prevImage()">‹</button>
+        <button class="lightbox-next" onclick="nextImage()">›</button>
+        <img id="lightbox-img" src="" alt="">
+    </div>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-image">
+                    <div class="about-image-border"></div>
+                    <img src="photos/1.jpg" alt="Photographer Portrait">
+                </div>
+                <div class="about-content">
+                    <h2>Capturing the <span class="italic">Unseen</span></h2>
+                    <p>I am a visual storyteller obsessed with the interplay of light and shadow. My work explores the raw human emotion found in everyday moments, seeking to elevate the mundane into the cinematic.</p>
+                    <p>With over a decade of experience in both digital and analog mediums, I approach every shoot as a collaboration, a chance to create something timeless. Whether it's a street corner in Tokyo or a high-end fashion editorial, my goal remains the same: honesty.</p>
+                    <div class="about-stats">
+                        <div class="stat">
+                            <div class="stat-number">10+</div>
+                            <div class="stat-label">Years Experience</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-number">500+</div>
+                            <div class="stat-label">Projects Completed</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-number">50+</div>
+                            <div class="stat-label">Happy Clients</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="container">
+            <div class="section-header">
+                <h2>Services</h2>
+                <p>Tailored photography packages designed to meet your creative needs.</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <h3>Portraiture</h3>
+                    <p class="service-description">Intimate and expressive portraits that reveal the subject's character.</p>
+                    <ul class="service-features">
+                        <li>2 Hour Session</li>
+                        <li>30 Retouched Images</li>
+                        <li>Online Gallery</li>
+                        <li>Print Rights</li>
+                    </ul>
+                    <div class="service-footer">
+                        <span class="service-price">৳50,000</span>
+                        <button class="service-btn">Inquire</button>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <h3>Editorial / Fashion</h3>
+                    <p class="service-description">High-end conceptual photography for brands, magazines, and portfolios.</p>
+                    <ul class="service-features">
+                        <li>Half or Full Day</li>
+                        <li>Creative Direction</li>
+                        <li>High-End Retouching</li>
+                        <li>Commercial Licensing</li>
+                    </ul>
+                    <div class="service-footer">
+                        <span class="service-price">Custom</span>
+                        <button class="service-btn">Inquire</button>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <h3>Events</h3>
+                    <p class="service-description">Documentary style coverage for weddings, corporate events, and parties.</p>
+                    <ul class="service-features">
+                        <li>Full Day Coverage</li>
+                        <li>Second Shooter</li>
+                        <li>400+ Images</li>
+                        <li>Express Delivery</li>
+                    </ul>
+                    <div class="service-footer">
+                        <span class="service-price">From ৳220,000</span>
+                        <button class="service-btn">Inquire</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="contact-bg"></div>
+        <div class="container">
+            <div class="contact-wrapper">
+                <div class="section-header">
+                    <h2>Let's Create Together</h2>
+                    <p>Open for commissions and collaborations worldwide.</p>
+                </div>
+                <form class="contact-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" id="name" placeholder="John Doe" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" placeholder="john@example.com" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" rows="4" placeholder="Tell me about your project..." required></textarea>
+                    </div>
+                    <div class="form-submit">
+                        <button type="submit" class="btn-primary">Send Message</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <svg class="camera-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                        <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path>
+                        <circle cx="12" cy="13" r="4"></circle>
+                    </svg>
+                    <span>PIXCAP</span>
+                </div>
+                <div class="footer-social">
+                    <a href="#" aria-label="Instagram">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                        </svg>
+                    </a>
+                    <a href="#" aria-label="Facebook">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+                        </svg>
+                    </a>
+                    <a href="#" aria-label="Twitter">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path>
+                        </svg>
+                    </a>
+                </div>
+                <p class="footer-copyright">© <span id="year"></span> PIXCAP Photography.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
